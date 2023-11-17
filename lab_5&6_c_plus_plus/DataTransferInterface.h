@@ -1,22 +1,22 @@
 ﻿#pragma once
 #include <iostream>
 
-enum DataTransferInterface { PATA, SATA, SAS, NVME };
+enum class DataTransferInterface { PATA, SATA, SAS, NVME };
 
 static std::string DataTransferInterfaceToString(DataTransferInterface transferInterface) {
 	std::string result;
 	switch (transferInterface)
 	{
-	case PATA:
+	case DataTransferInterface::PATA:
 		result = "PATA";
 		break;
-	case SATA:
+	case DataTransferInterface::SATA:
 		result = "SATA";
 		break;
-	case SAS:
+	case DataTransferInterface::SAS:
 		result = "SAS";
 		break;
-	case NVME:
+	case DataTransferInterface::NVME:
 		result = "NVMe";
 		break;
 	default:
@@ -31,16 +31,16 @@ static std::istream& operator >> (std::istream& in, DataTransferInterface& trans
 	switch (choice)
 	{
 	case 0:
-		transferInterface = PATA;
+		transferInterface = DataTransferInterface::PATA;
 		break;
 	case 1:
-		transferInterface = SATA;
+		transferInterface = DataTransferInterface::SATA;
 		break;
 	case 2:
-		transferInterface = SAS;
+		transferInterface = DataTransferInterface::SAS;
 		break;
 	case 3:
-		transferInterface = NVME;
+		transferInterface = DataTransferInterface::NVME;
 		break;
 	default:
 		break;

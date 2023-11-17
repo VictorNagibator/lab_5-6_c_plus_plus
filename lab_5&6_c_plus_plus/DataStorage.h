@@ -23,7 +23,7 @@ public:
 	virtual std::string toString() const abstract;
 protected:
 	int capacity = 0;
-	DataTransferInterface transferInterface = SATA;
+	DataTransferInterface transferInterface = DataTransferInterface::SATA;
 	float formFactor = 0;
 	std::string brand;
 

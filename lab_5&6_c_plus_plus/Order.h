@@ -26,8 +26,7 @@ private:
 
 	int numOfOrder;
 	Laptop laptop = Laptop();
-	StatusType status = ONHOLD;
+	StatusType status = StatusType::ONHOLD;
 
-	bool checkArguments(StatusType status) const;
-	void tryToSetArguments(StatusType status);
+	void setArguments(StatusType status);
 };

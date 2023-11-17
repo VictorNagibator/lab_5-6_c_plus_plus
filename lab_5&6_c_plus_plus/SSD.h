@@ -21,8 +21,7 @@ public:
 	void input() override;
 	std::string toString() const override;
 private:
-	FlashMemoryType typeOfFlashMemory = NAND3D;
+	FlashMemoryType typeOfFlashMemory = FlashMemoryType::NAND3D;
 
-	bool checkArguments(FlashMemoryType typeOfFlashMemory) const;
-	void tryToSetArguments(FlashMemoryType typeOfFlashMemory);
+	void setArguments(FlashMemoryType typeOfFlashMemory);
 };

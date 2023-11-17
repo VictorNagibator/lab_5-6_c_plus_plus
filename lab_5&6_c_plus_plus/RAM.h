@@ -28,7 +28,7 @@ public:
 	std::string toString() const override;
 private:
 	std::string modelName;
-	RAMType type = DDR;
+	RAMType type = RAMType::DDR;
 	float frequency = 0;
 	int capacity = 0;
 

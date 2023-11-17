@@ -1,18 +1,18 @@
 ﻿#pragma once
 
-enum StatusType { ONHOLD, INPROCCESS, FINISHED };
+enum class StatusType { ONHOLD, INPROCCESS, FINISHED };
 
 static std::string StatusTypeToString(StatusType type) {
 	std::string result;
 	switch (type)
 	{
-	case ONHOLD:
+	case StatusType::ONHOLD:
 		result = "В ожидании";
 		break;
-	case INPROCCESS:
+	case StatusType::INPROCCESS:
 		result = "В ремонте";
 		break;
-	case FINISHED:
+	case StatusType::FINISHED:
 		result = "Готов";
 		break;
 	default:
@@ -27,19 +27,20 @@ static std::istream& operator >> (std::istream& in, StatusType& status) {
 	switch (choice)
 	{
 	case 0:
-		status = ONHOLD;
+		status = StatusType::ONHOLD;
 		break;
 	case 1:
-		status = INPROCCESS;
+		status = StatusType::INPROCCESS;
 		break;
 	case 2:
-		status = FINISHED;
+		status = StatusType::FINISHED;
 		break;
 	default:
 		break;
 	}
 	return in;
 };
+
 static std::ostream& operator << (std::ostream& out, StatusType& status) {
 	out << StatusTypeToString(status);
 	return out;

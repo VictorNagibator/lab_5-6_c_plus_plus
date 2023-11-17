@@ -26,8 +26,7 @@ private:
 	std::string modelName;
 	std::string socket;
 	std::string chipset;
-	RAMType supportedRAMType = DDR;
+	RAMType supportedRAMType = RAMType::DDR;
 
-	bool checkArguments(std::string modelName, std::string socket, std::string chipset, RAMType supportedRAMType) const;
-	void tryToSetArguments(std::string modelName, std::string socket, std::string chipset, RAMType supportedRAMType);
+	void setArguments(std::string modelName, std::string socket, std::string chipset, RAMType supportedRAMType);
 };

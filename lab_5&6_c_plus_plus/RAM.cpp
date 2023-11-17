@@ -85,7 +85,7 @@ std::string RAM::toString() const {
 
 
 bool RAM::checkArguments(std::string modelName, RAMType type, float frequency, int capacity) const {
-	return type >= DDR && type <= DDR5 && frequency >= 0 && frequency <= DDRFreqMax[type] && capacity >= 0;
+	return frequency >= 0 && frequency <= DDRFreqMax[RAMTypeToInt(type)] && capacity >= 0;
 }
 
 void RAM::tryToSetArguments(std::string modelName, RAMType type, float frequency, int capacity) {

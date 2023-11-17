@@ -17,7 +17,7 @@ Motherboard::Motherboard(std::string modelName) {
 }
 
 Motherboard::Motherboard(std::string modelName, std::string socket, std::string chipset, RAMType supportedRAMType) {
-    tryToSetArguments(modelName, socket, chipset, supportedRAMType);
+    setArguments(modelName, socket, chipset, supportedRAMType);
 }
 
 std::string Motherboard::getComponentName() const {
@@ -54,7 +54,7 @@ void Motherboard::input() {
     std::cin >> supportedRAMType;
     while (getchar() != '\n');
 
-    tryToSetArguments(modelName, socket, chipset, supportedRAMType);
+    setArguments(modelName, socket, chipset, supportedRAMType);
 }
 
 std::string Motherboard::toString() const {
@@ -63,16 +63,9 @@ std::string Motherboard::toString() const {
 }
 
 
-bool Motherboard::checkArguments(std::string modelName, std::string socket, std::string chipset, RAMType supportedRAMType) const {
-    return supportedRAMType >= DDR && supportedRAMType <= DDR5;
-}
-
-void Motherboard::tryToSetArguments(std::string modelName, std::string socket, std::string chipset, RAMType supportedRAMType) {
-    if (checkArguments(modelName, socket, chipset, supportedRAMType)) {
-        this->modelName = modelName;
-        this->socket = socket;
-        this->chipset = chipset;
-        this->supportedRAMType = supportedRAMType;
-    }
-    else throw std::invalid_argument("Некорректный формат данных!");
+void Motherboard::setArguments(std::string modelName, std::string socket, std::string chipset, RAMType supportedRAMType) {
+    this->modelName = modelName;
+    this->socket = socket;
+    this->chipset = chipset;
+    this->supportedRAMType = supportedRAMType;
 }

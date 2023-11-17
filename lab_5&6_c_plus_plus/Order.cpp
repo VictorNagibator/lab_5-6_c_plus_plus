@@ -11,7 +11,7 @@ Order::Order(Laptop laptop) {
 }
 
 Order::Order(Laptop laptop, StatusType status) : Order(laptop) {
-	tryToSetArguments(status);
+	setArguments(status);
 }
 
 int Order::getNumOfLastOrder() {
@@ -42,7 +42,7 @@ void Order::input() {
 
 	this->numOfOrder = numOfLastOrder;
 	this->laptop = laptop;
-	tryToSetArguments(type);
+	setArguments(type);
 }
 
 void Order::setStatus(StatusType status) {
@@ -63,13 +63,6 @@ std::string Order::toString() const {
 }
 
 
-bool Order::checkArguments(StatusType status) const {
-	return status >= ONHOLD && status <= FINISHED;
-}
-
-void Order::tryToSetArguments(StatusType status) {
-	if (checkArguments(status)) {
-		this->status = status;
-	}
-	else throw std::invalid_argument("Некорректный формат данных!");
+void Order::setArguments(StatusType status) {
+	this->status = status;
 }

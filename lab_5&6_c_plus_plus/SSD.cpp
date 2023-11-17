@@ -20,7 +20,7 @@ SSD::SSD(DataTransferInterface transferInterface)
 
 SSD::SSD(int capacity, DataTransferInterface transferInterface, std::string brand, float formFactor, FlashMemoryType typeOfFlashMemory)
 	: DataStorage(capacity, transferInterface, brand, formFactor) {
-	tryToSetArguments(typeOfFlashMemory);
+	setArguments(typeOfFlashMemory);
 }
 
 std::string SSD::getComponentName() const {
@@ -39,7 +39,7 @@ void SSD::input() {
 	std::cin >> typeOfFlashMemory;
 	while (getchar() != '\n');
 
-	tryToSetArguments(typeOfFlashMemory);
+	setArguments(typeOfFlashMemory);
 }
 
 std::string SSD::toString() const {
@@ -48,13 +48,6 @@ std::string SSD::toString() const {
 }
 
 
-bool SSD::checkArguments(FlashMemoryType typeOfFlashMemory) const {
-	return typeOfFlashMemory >= SLC && typeOfFlashMemory <= NAND3D;
-}
-
-void SSD::tryToSetArguments(FlashMemoryType typeOfFlashMemory) {
-	if (checkArguments(typeOfFlashMemory)) {
-		this->typeOfFlashMemory = typeOfFlashMemory;
-	}
-	else throw std::invalid_argument("Некорректный формат данных!");
+void SSD::setArguments(FlashMemoryType typeOfFlashMemory) {
+	this->typeOfFlashMemory = typeOfFlashMemory;
 }

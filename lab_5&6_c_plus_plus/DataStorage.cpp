@@ -51,7 +51,7 @@ std::string DataStorage::toString() const {
 }
 
 bool DataStorage::checkArguments(int capacity, DataTransferInterface transferInterface, std::string brand, float formFactor) const {
-	return capacity >= 0 && transferInterface >= PATA && transferInterface <= NVME && formFactor >= 0;
+	return capacity >= 0 && formFactor >= 0;
 }
 
 void DataStorage::tryToSetArguments(int capacity, DataTransferInterface transferInterface, std::string brand, float formFactor) {
