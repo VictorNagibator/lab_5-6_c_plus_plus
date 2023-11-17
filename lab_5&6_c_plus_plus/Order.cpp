@@ -46,11 +46,8 @@ void Order::input() {
 }
 
 void Order::setStatus(StatusType status) {
-	if (checkArguments(status)) {
-		this->status = status;
-		std::cout << "Состояние заказа успешно изменено!\n";
-	}
-	else throw std::invalid_argument("Некорректный формат данных!");
+	this->status = status;
+	std::cout << "Состояние заказа успешно изменено!\n";
 }
 
 void Order::setLaptop(Laptop laptop) {
