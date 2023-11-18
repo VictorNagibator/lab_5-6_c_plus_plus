@@ -1,10 +1,7 @@
 ﻿#include "SSD.h"
 
 void SSD::operator=(SSD other) {
-	this->capacity = other.capacity;
-	this->transferInterface = other.transferInterface;
-	this->brand = other.brand;
-	this->formFactor = other.formFactor;
+	DataStorage::operator=(other);
 	this->typeOfFlashMemory = other.typeOfFlashMemory;
 }
 

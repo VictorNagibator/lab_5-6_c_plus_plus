@@ -12,6 +12,8 @@ public:
 	DataStorage(int capacity, DataTransferInterface transferInterface, std::string brand, float formFactor);
 	~DataStorage() = default;
 
+	void operator=(DataStorage* other);
+
 	virtual std::string getComponentName() const abstract = 0;
 
 	virtual int getCapacity() const;

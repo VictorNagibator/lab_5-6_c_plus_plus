@@ -1,4 +1,6 @@
 ﻿#pragma once
+#include <iostream>
+#include <istream>
 
 enum class StatusType { ONHOLD, INPROCCESS, FINISHED };
 

@@ -12,7 +12,6 @@ public:
 	~CPU() = default;
 
 	void operator=(CPU other);
-	//единственное "разумное" применение модификтора friend
 	friend CPU& operator++(CPU& cpu);
 
 	std::string getComponentName() const override;

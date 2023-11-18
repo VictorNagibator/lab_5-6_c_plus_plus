@@ -136,7 +136,6 @@
     <ClCompile Include="lab_5&amp;6_c_plus_plus.cpp" />
     <ClCompile Include="Laptop.cpp" />
     <ClCompile Include="Motherboard.cpp" />
-    <ClCompile Include="Order.cpp" />
     <ClCompile Include="RAM.cpp" />
     <ClCompile Include="SSD.cpp" />
   </ItemGroup>

@@ -148,6 +148,7 @@ DataStorage* Laptop::createDataStorage(int choice) {
 }
 
 
+
 void Laptop::boostCPU() {
     try
     {
@@ -155,7 +156,7 @@ void Laptop::boostCPU() {
     }
     catch (const std::invalid_argument&)
     {
-        std::cout << "Разгон CPU больше невозможен!\n";
+        std::cout << "Разгон больше невозможен!\n";
     }
 }
 
@@ -170,6 +171,7 @@ void Laptop::boostCPU(float addable) {
     }
 }
 
+
 void Laptop::boostRAM() {
     try
     {
@@ -177,7 +179,7 @@ void Laptop::boostRAM() {
     }
     catch (const std::invalid_argument&)
     {
-        std::cout << "Разгон RAM больше не возможен!\n";
+        std::cout << "Разгон больше невозможен!\n";
     }
 }
 
@@ -188,6 +190,6 @@ void Laptop::boostRAM(float addable) {
     }
     catch (const std::invalid_argument&)
     {
-        std::cout << "Разгон RAM больше не возможен!\n";
+        std::cout << "Разгон CPU больше невозможен!\n";
     }
 }

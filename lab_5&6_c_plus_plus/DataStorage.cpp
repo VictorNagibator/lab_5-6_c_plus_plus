@@ -1,5 +1,12 @@
 ﻿#include "DataStorage.h"
 
+void DataStorage::operator=(DataStorage* other) {
+	this->capacity = other->capacity;
+	this->transferInterface = other->transferInterface;
+	this->brand = other->brand;
+	this->formFactor = other->formFactor;
+}
+
 DataStorage::DataStorage(DataTransferInterface transferInterface) {
 	this->transferInterface = transferInterface;
 }

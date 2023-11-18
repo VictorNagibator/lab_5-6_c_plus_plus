@@ -34,8 +34,8 @@ public:
 	void setDataStorage(DataStorage* dataStorage);
 	void input();
 	void boostCPU();
-	void boostRAM();
 	void boostCPU(float addable);
+	void boostRAM();
 	void boostRAM(float addable);
 	std::string toString() const;
 private:

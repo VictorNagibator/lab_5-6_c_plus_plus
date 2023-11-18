@@ -1,11 +1,8 @@
 ﻿#include "HDD.h"
 
 void HDD::operator=(HDD other) {
-	this->capacity = other.capacity;
-	this->transferInterface = other.transferInterface;
-	this->brand = other.brand;
+	DataStorage::operator=(other);
 	this->spindleSpeed = other.spindleSpeed;
-	this->formFactor = other.formFactor;
 }
 
 std::ostream& operator << (std::ostream& out, const HDD& hdd) {
