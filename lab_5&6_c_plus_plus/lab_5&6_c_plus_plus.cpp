@@ -9,7 +9,7 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	//5-ая лабораторной
+	//5-ая лабораторная
 	//1. Пример работы с исключениями
 	try
 	{
@@ -31,13 +31,26 @@ int main()
 	SSD boxOfSSDs[2][2];
 	for (int i = 0; i < 2; i++)
 		for (int j = 0; j < 2; j++)
-			boxOfSSDs[i][j].input();
+			//boxOfSSDs[i][j].input();
 	std::cout << boxOfSSDs[0][1] << std::endl << std::endl;
 
 	//6-ая лабораторная
-	
-
-
+	//1. Пример работы с базовыми и производными классами, а также с виртуальными методами
+	HDD hdd = HDD();
+	SSD ssd = SSD();
+	DataStorage* storage;
+	storage = &hdd;
+	std::cout << storage->getComponentName() << std::endl;
+	storage = &ssd;
+	std::cout << storage->getComponentName() << std::endl;
+	storage = new SSD(DataTransferInterface::NVME);
+	std::cout << storage->toString() << std::endl;
+	delete storage;
+	//2. Перегрузка операторов = и <<
+	Display display1 = Display(1920, 1080, 60);
+	Display display2 = display1;
+	std::cout << display1 << std::endl << display2 << std::endl;
+	//3. Пример работы с шаблонным классом
 	std::string t = "Client is annoying";
 	Order order = Order(Laptop(), StatusType::FINISHED, t);
 	std::cout << order << std::endl;
