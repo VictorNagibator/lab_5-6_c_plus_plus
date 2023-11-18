@@ -19,6 +19,7 @@ int main()
 	{
 		std::cout << ex.what() << std::endl;
 	}
+
 	//2. Пример работы с одномерными и двумерными массивами
 	srand(time(NULL)); //чтобы правильно работал генератор случайных чисел
 	Laptop devices[3];
@@ -46,12 +47,16 @@ int main()
 	storage = new SSD(DataTransferInterface::NVME);
 	std::cout << storage->toString() << std::endl;
 	delete storage;
+
 	//2. Перегрузка операторов = и <<
 	Display display1 = Display(1920, 1080, 60);
 	Display display2 = display1;
 	std::cout << display1 << std::endl << display2 << std::endl;
+
 	//3. Пример работы с шаблонным классом
 	std::string t = "Client is annoying";
-	Order order = Order(Laptop(), StatusType::FINISHED, t);
+	Order order = Order(Laptop(), StatusType::FINISHED, t); //например, сообщение о клиенте
 	std::cout << order << std::endl;
+	Order<int> order2 = Order<int>(Laptop(), StatusType::FINISHED, 9999); //например, цена покупки
+	std::cout << order2 << std::endl;
 }
