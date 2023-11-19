@@ -32,7 +32,7 @@ int main()
 	SSD boxOfSSDs[2][2];
 	for (int i = 0; i < 2; i++)
 		for (int j = 0; j < 2; j++)
-			//boxOfSSDs[i][j].input();
+			boxOfSSDs[i][j].input();
 	std::cout << boxOfSSDs[0][1] << std::endl << std::endl;
 
 	//6-ая лабораторная
