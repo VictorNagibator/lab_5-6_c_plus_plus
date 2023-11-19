@@ -156,7 +156,7 @@ void Laptop::boostCPU() {
     }
     catch (const std::invalid_argument&)
     {
-        std::cout << "Разгон больше невозможен!\n";
+        std::cout << "Разгон CPU больше невозможен!\n";
     }
 }
 
@@ -179,7 +179,7 @@ void Laptop::boostRAM() {
     }
     catch (const std::invalid_argument&)
     {
-        std::cout << "Разгон больше невозможен!\n";
+        std::cout << "Разгон RAM больше невозможен!\n";
     }
 }
 
@@ -190,6 +190,6 @@ void Laptop::boostRAM(float addable) {
     }
     catch (const std::invalid_argument&)
     {
-        std::cout << "Разгон CPU больше невозможен!\n";
+        std::cout << "Разгон RAM больше невозможен!\n";
     }
 }
